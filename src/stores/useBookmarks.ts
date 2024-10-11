@@ -1,8 +1,10 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { pinyin } from 'pinyin-pro'
+import type { Bookmarks, Browser } from 'webextension-polyfill'
+import browser from 'webextension-polyfill'
 
-export type BookmarkNode = chrome.bookmarks.BookmarkTreeNode
+export type BookmarkNode = browser.Bookmarks.BookmarkTreeNode
 
 export default defineStore('bookmarks', () => {
   const bookmarks = ref<BookmarkNode[]>([])
